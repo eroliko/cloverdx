@@ -81,6 +81,37 @@
                     </form>
                 </div>
             </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Jméno</th>
+                            <th scope="col">Příjmení</th>
+                            <th scope="col">Telefon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php /** @var \App\Http\Containers\ClientContainer\Models\Client $client */ @endphp
+                        @foreach($clients as $client)
+                            <tr>
+                                <th scope="row">
+                                    {{ $client->getKey() }}
+                                </th>
+                                <td>
+                                    {{ $client->getFirstname() }}
+                                </td>
+                                <td>
+                                    {{ $client->getSurname() }}
+                                </td>
+                                <td>
+                                    {{ $client->getTelephone() }}
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </html>

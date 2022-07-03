@@ -57,4 +57,27 @@ final class Client extends Model
         $this->fill($data);
     }
 
+    /**
+     * @return string
+     */
+    public function getFirstname(): string
+    {
+        return $this->getAttributeValue(self::ATTR_FIRSTNAME);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSurname(): string
+    {
+        return $this->getAttributeValue(self::ATTR_SURNAME);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTelephone(): string
+    {
+        return $this->getAttributeValue(self::ATTR_TELEPHONE);
+    }
 }
