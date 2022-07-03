@@ -24,7 +24,7 @@ final class Client extends Model
      */
     public const LIMIT_FIRSTNAME = 128;
 
-    public const LIMIT_LASTNAME = 128;
+    public const LIMIT_SURNAME = 128;
 
     public const LIMIT_TELEPHONE = 32;
 

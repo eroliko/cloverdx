@@ -14,6 +14,12 @@
         <div class="container" style="margin-top: 10%;">
             <div class="row">
                 <div class="col">
+                    @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
+
                     <form method="POST" action="{{ route('clients.store') }}">
                         @csrf
                         <label
@@ -29,6 +35,9 @@
                                 class="form-control"
                                 value=""
                         >
+                        @error(\App\Http\Containers\ClientContainer\Models\Client::ATTR_FIRSTNAME)
+                            <div class="error">{{ $message }}</div>
+                        @enderror
 
                         <label
                                 for="id-{{ \App\Http\Containers\ClientContainer\Models\Client::ATTR_SURNAME }}"
@@ -43,6 +52,9 @@
                                 class="form-control"
                                 value=""
                         >
+                        @error(\App\Http\Containers\ClientContainer\Models\Client::ATTR_SURNAME)
+                            <div class="error">{{ $message }}</div>
+                        @enderror
 
                         <label
                                 for="id-{{ \App\Http\Containers\ClientContainer\Models\Client::ATTR_TELEPHONE }}"
@@ -57,6 +69,9 @@
                                 class="form-control"
                                 value=""
                         >
+                        @error(\App\Http\Containers\ClientContainer\Models\Client::ATTR_TELEPHONE)
+                            <div class="error">{{ $message }}</div>
+                        @enderror
 
                         <input
                                 type="submit"
