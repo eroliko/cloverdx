@@ -18,7 +18,7 @@ return new class() extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('firstname', 128);
-            $table->string('lastname', 128);
+            $table->string('surname', 128);
             $table->string('telephone', 32);
             $table->timestamps();
         });
